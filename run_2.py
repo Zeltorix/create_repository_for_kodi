@@ -18,18 +18,22 @@ list_repo = [
     ["", "repo_template/template_test_4", "source_template/template_test_1"],
     ["", "repo_template/template_test_4", "source_template/template_test_2"],
     ["", "repo_template/template_test_4", "source_template/template_test_3"],
+    # Хотя на врет ли это понадобится, все пути можно прописать в адоне репозитории
 ]
 
 
 def main():
     # При желании можно изменять добавив в CreateRepo() нужные параметры,
     # branch можно вызвать без названия, остальные требуют названия.
+    # Пример создаваемых путей, при запуске без параметров:
+    # исходники - "\source\my_repo\"
+    # репозитории - "\repository\my_repo\"
     #
     # :param str branch: Подкаталог общий для исходников и репозитории, по умолчанию "my_repo"
     # :param str repository_dir: Каталог куда будет собираться репозитория, по умолчанию "repository"
     # :param str source_dir: Каталог откуда будет собираться репозитория, по умолчанию "source"
-    # :param Path target_dir: Начальный путь с которого скрипт начинает свою работу, по умолчанию текущий каталог,
-    #                         нужен также для работы GIT, должна указана корнева папка GIT репозитории
+    # :param Path target_dir: Начальный путь с которого скрипт начинает свою работу, по умолчанию текущий каталог.
+    #                         Также нужен для работы GIT, должна указана корнева папка GIT репозитории.
 
     for item in list_repo:
         CreateRepo(
